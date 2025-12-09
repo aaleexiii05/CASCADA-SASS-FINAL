@@ -1,0 +1,170 @@
+// ========================================
+// COMPONENTES
+// ========================================
+
+// NAVBAR
+.navbar {
+  background: $dark;
+  padding: $space-sm $space-md;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: $shadow;
+  
+  &__container {
+    @include flex-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    
+    @include tablet {
+      flex-direction: column;
+      gap: $space-sm;
+    }
+  }
+  
+  &__logo {
+    @include flex-center;
+    gap: $space-xs;
+    
+    img {
+      width: 50px;
+    }
+    
+    h2 {
+      color: $primary;
+      font-size: $text-md;
+    }
+  }
+  
+  &__menu {
+    display: flex;
+    gap: $space-md;
+    
+    @include tablet {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+  
+  &__link {
+    color: $white;
+    font-weight: 500;
+    transition: $transition;
+    
+    &:hover,
+    &--active {
+      color: $primary;
+    }
+  }
+  
+  &__cart {
+    @include btn;
+    background: $primary;
+    color: $white;
+  }
+}
+
+// BOTONES
+.btn {
+  @include btn;
+  
+  &--primary {
+    background: $primary;
+    color: $white;
+    
+    &:hover {
+      background: darken($primary, 10%);
+    }
+  }
+  
+  &--secondary {
+    background: transparent;
+    border: 2px solid $primary;
+    color: $primary;
+    
+    &:hover {
+      background: $primary;
+      color: $white;
+    }
+  }
+}
+
+// CARDS
+.card {
+  background: $white;
+  border-radius: $radius;
+  box-shadow: $shadow;
+  padding: $space-md;
+  transition: $transition;
+  
+  &:hover {
+    transform: translateY(-5px);
+  }
+  
+  &__img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: $radius;
+    margin-bottom: $space-sm;
+  }
+  
+  &__title {
+    font-size: $text-md;
+    margin-bottom: $space-xs;
+  }
+  
+  &__text {
+    font-size: $text-sm;
+    color: #666;
+    margin-bottom: $space-sm;
+  }
+  
+  &__footer {
+    @include flex-between;
+    
+    span {
+      font-size: $text-lg;
+      color: $primary;
+      font-weight: 700;
+    }
+  }
+}
+
+// FORMULARIO
+.form {
+  background: $white;
+  padding: $space-lg;
+  border-radius: $radius;
+  box-shadow: $shadow;
+  
+  &__group {
+    margin-bottom: $space-md;
+  }
+  
+  &__label {
+    display: block;
+    margin-bottom: $space-xs;
+    font-weight: 600;
+  }
+  
+  &__input,
+  &__textarea {
+    width: 100%;
+    padding: $space-sm;
+    border: 2px solid $light;
+    border-radius: $radius;
+    font-family: $font-main;
+    transition: $transition;
+    
+    &:focus {
+      outline: none;
+      border-color: $primary;
+    }
+  }
+  
+  &__textarea {
+    min-height: 150px;
+    resize: vertical;
+  }
+}

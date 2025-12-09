@@ -1,0 +1,74 @@
+// ========================================
+// ESTILOS BASE
+// ========================================
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Montserrat:wght@700;800;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $font-main;
+  color: $text;
+  line-height: 1.6;
+  background: $light;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1, h2, h3 {
+  font-family: $font-heading;
+  font-weight: 700;
+  color: $dark;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: $text-xl;
+  
+  @include tablet {
+    font-size: 2rem;
+  }
+}
+
+h2 {
+  font-size: $text-lg;
+  
+  @include tablet {
+    font-size: 1.5rem;
+  }
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 $space-md;
+}
+
+.section {
+  padding: $space-xl 0;
+  
+  @include tablet {
+    padding: $space-lg 0;
+  }
+}

@@ -1,0 +1,425 @@
+// ========================================
+// ANIMACIONES CSS - BIGBURGER
+// ========================================
+
+// 1. ANIMACIONES CON @KEYFRAMES
+// ========================================
+
+// Animación flotante para la hamburguesa hero (YA EXISTE - mejorada)
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+// Animación de entrada desde la izquierda
+@keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+// Animación de entrada desde la derecha
+@keyframes slideInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+// Animación de fade in (aparecer)
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+// Animación de zoom in
+@keyframes zoomIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+// Animación de rebote
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-20px);
+  }
+  60% {
+    transform: translateY(-10px);
+  }
+}
+
+// Animación de pulso (para badges/precios)
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(255, 107, 53, 0.7);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 10px rgba(255, 107, 53, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(255, 107, 53, 0);
+  }
+}
+
+// Animación de shake (sacudir)
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  10%, 30%, 50%, 70%, 90% {
+    transform: translateX(-5px);
+  }
+  20%, 40%, 60%, 80% {
+    transform: translateX(5px);
+  }
+}
+
+// Animación de rotación continua
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+// 2. CLASES DE ANIMACIÓN REUTILIZABLES
+// ========================================
+
+.animate-slideInLeft {
+  animation: slideInLeft 0.8s ease-out;
+}
+
+.animate-slideInRight {
+  animation: slideInRight 0.8s ease-out;
+}
+
+.animate-fadeIn {
+  animation: fadeIn 1s ease-in;
+}
+
+.animate-zoomIn {
+  animation: zoomIn 0.6s ease-out;
+}
+
+.animate-bounce {
+  animation: bounce 1s ease;
+}
+
+.animate-pulse {
+  animation: pulse 2s infinite;
+}
+
+.animate-shake {
+  animation: shake 0.5s ease;
+}
+
+
+// 3. TRANSICIONES MEJORADAS
+// ========================================
+
+// Transición suave en botones
+.btn {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  &:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 10px 30px rgba(255, 107, 53, 0.4);
+  }
+  
+  &:active {
+    transform: translateY(-1px) scale(0.98);
+  }
+}
+
+// Transición en cards
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-10px) rotate(1deg);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+    
+    .card__img {
+      transform: scale(1.05);
+    }
+  }
+}
+
+.card__img {
+  transition: transform 0.4s ease;
+  overflow: hidden;
+}
+
+// Transición en links del navbar
+.navbar__link {
+  position: relative;
+  transition: color 0.3s ease;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: $primary;
+    transition: width 0.3s ease;
+  }
+  
+  &:hover::after,
+  &--active::after {
+    width: 100%;
+  }
+}
+
+
+// 4. TRANSFORMACIONES ESPECÍFICAS
+// ========================================
+
+// Logo del navbar con efecto hover
+.navbar__logo {
+  transition: transform 0.3s ease;
+  
+  &:hover {
+    transform: scale(1.1) rotate(-5deg);
+    
+    img {
+      filter: drop-shadow(0 0 10px rgba(255, 107, 53, 0.6));
+    }
+  }
+}
+
+// Precio en hero con animación especial
+.hero__price {
+  animation: pulse 2s infinite, float 3s ease-in-out infinite;
+  transition: transform 0.3s ease;
+  
+  &:hover {
+    animation-play-state: paused;
+    transform: rotate(0deg) scale(1.1);
+    cursor: pointer;
+  }
+}
+
+// Botones del hero con efectos especiales
+.hero__buttons .btn {
+  &:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3);
+  }
+}
+
+// Footer con transición suave en hover
+.footer__col a {
+  position: relative;
+  transition: all 0.3s ease;
+  display: inline-block;
+  
+  &:hover {
+    transform: translateX(5px);
+    color: $primary;
+  }
+}
+
+
+// 5. ANIMACIONES AL CARGAR LA PÁGINA
+// ========================================
+
+// Hero content animation
+.hero__content {
+  animation: slideInLeft 1s ease-out;
+}
+
+.hero__image {
+  animation: slideInRight 1s ease-out;
+}
+
+// Cards con delay escalonado
+.card {
+  animation: fadeIn 0.6s ease-out;
+  animation-fill-mode: both;
+  
+  &:nth-child(1) { animation-delay: 0.1s; }
+  &:nth-child(2) { animation-delay: 0.2s; }
+  &:nth-child(3) { animation-delay: 0.3s; }
+  &:nth-child(4) { animation-delay: 0.4s; }
+  &:nth-child(5) { animation-delay: 0.5s; }
+  &:nth-child(6) { animation-delay: 0.6s; }
+}
+
+// Navbar con animación al cargar
+.navbar {
+  animation: slideInDown 0.5s ease-out;
+}
+
+@keyframes slideInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Footer con fade in
+.footer {
+  animation: fadeIn 1s ease-in;
+}
+
+
+// 6. EFECTOS HOVER ADICIONALES
+// ========================================
+
+// Efecto de brillo en imágenes
+.card__img,
+.hero__image img {
+  position: relative;
+  overflow: hidden;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+      45deg,
+      transparent 30%,
+      rgba(255, 255, 255, 0.3) 50%,
+      transparent 70%
+    );
+    transform: rotate(45deg);
+    transition: transform 0.6s ease;
+  }
+  
+  &:hover::before {
+    transform: translateX(100%) translateY(100%) rotate(45deg);
+  }
+}
+
+// Efecto de subrayado animado en footer
+.footer__col h3 {
+  position: relative;
+  display: inline-block;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 50%;
+    height: 2px;
+    background: $primary;
+    animation: expandWidth 2s ease-in-out infinite;
+  }
+}
+
+@keyframes expandWidth {
+  0%, 100% {
+    width: 50%;
+  }
+  50% {
+    width: 100%;
+  }
+}
+
+// Botón del carrito con animación especial
+.navbar__cart {
+  position: relative;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-3px) scale(1.05);
+    animation: shake 0.5s ease;
+  }
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    width: 10px;
+    height: 10px;
+    background: $secondary;
+    border-radius: 50%;
+    animation: pulse 1.5s infinite;
+  }
+}
+
+
+// 7. LOADING SPINNER (OPCIONAL)
+// ========================================
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid $light;
+  border-top-color: $primary;
+  border-radius: 50%;
+  animation: rotate 1s linear infinite;
+  margin: 2rem auto;
+}
+
+
+// 8. COMPATIBILIDAD - PREFIJOS VENDOR
+// ========================================
+
+// Asegurar compatibilidad con navegadores antiguos
+@mixin animation($animation) {
+  -webkit-animation: $animation;
+  -moz-animation: $animation;
+  -o-animation: $animation;
+  animation: $animation;
+}
+
+@mixin transform($transform) {
+  -webkit-transform: $transform;
+  -moz-transform: $transform;
+  -ms-transform: $transform;
+  -o-transform: $transform;
+  transform: $transform;
+}
+
+@mixin transition($transition) {
+  -webkit-transition: $transition;
+  -moz-transition: $transition;
+  -o-transition: $transition;
+  transition: $transition;
+}
+
+//lalalava pupu pusi

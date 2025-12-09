@@ -1,0 +1,322 @@
+// ========================================
+// LAYOUT - CORREGIDO RESPONSIVE
+// ========================================
+
+// HERO
+.hero {
+  background: linear-gradient(135deg, $primary, darken($primary, 15%));
+  padding: $space-xl $space-md;
+  border-radius: $radius;
+  margin: $space-md;
+  
+  @include tablet {
+    padding: $space-lg $space-sm;
+    margin: $space-sm;
+  }
+  
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: $space-lg;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    
+    @include tablet {
+      grid-template-columns: 1fr;
+      text-align: center;
+      gap: $space-md;
+    }
+  }
+  
+  &__content {
+    h3 {
+      color: $secondary;
+      font-size: $text-base;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: $space-xs;
+      
+      @include mobile {
+        font-size: $text-sm;
+      }
+    }
+    
+    h1 {
+      color: $white;
+      margin-bottom: $space-sm;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      
+      @include tablet {
+        font-size: 2rem;
+      }
+      
+      @include mobile {
+        font-size: 1.75rem;
+      }
+    }
+    
+    p {
+      color: $white;
+      font-size: $text-md;
+      margin-bottom: $space-md;
+      line-height: 1.8;
+      
+      @include tablet {
+        font-size: $text-base;
+      }
+      
+      @include mobile {
+        font-size: $text-sm;
+        margin-bottom: $space-sm;
+      }
+    }
+  }
+  
+  &__buttons {
+    display: flex;
+    gap: $space-sm;
+    
+    @include tablet {
+      justify-content: center;
+    }
+    
+    @include mobile {
+      flex-direction: column;
+      width: 100%;
+    }
+  }
+  
+  &__image {
+    position: relative;
+    @include flex-center;
+    width: 100%;
+    
+    img {
+      max-width: 100%;
+      width: 100%;
+      height: auto;
+      max-width: 400px;
+      filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.3));
+      animation: float 3s ease-in-out infinite;
+      
+      @include tablet {
+        max-width: 300px;
+      }
+      
+      @include mobile {
+        max-width: 250px;
+      }
+    }
+  }
+  
+  &__price {
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    background: $secondary;
+    color: $dark;
+    padding: $space-sm $space-md;
+    border-radius: $radius;
+    font-size: $text-lg;
+    font-weight: 700;
+    transform: rotate(15deg);
+    box-shadow: $shadow;
+    text-align: center;
+    line-height: 1.2;
+    
+    @include tablet {
+      font-size: $text-md;
+      padding: $space-xs $space-sm;
+      top: -10px;
+      right: -10px;
+    }
+    
+    @include mobile {
+      font-size: $text-base;
+      padding: $space-xs;
+      top: -5px;
+      right: -5px;
+    }
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+// GRID DE PRODUCTOS
+.products {
+  @include grid(3, $space-md);
+  padding: $space-md;
+  max-width: 1200px;
+  margin: 0 auto;
+  
+  @include tablet {
+    @include grid(2, $space-sm);
+    padding: $space-sm;
+  }
+  
+  @include mobile {
+    @include grid(1, $space-sm);
+    padding: $space-sm;
+  }
+}
+
+// SECCIÓN DE CONTENIDO
+.content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: $space-lg $space-md;
+  
+  @include tablet {
+    padding: $space-md $space-sm;
+  }
+  
+  @include mobile {
+    padding: $space-sm;
+  }
+  
+  &__grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: $space-lg;
+    
+    @include tablet {
+      grid-template-columns: 1fr;
+      gap: $space-md;
+    }
+  }
+  
+  &__main {
+    background: $white;
+    padding: $space-lg;
+    border-radius: $radius;
+    box-shadow: $shadow;
+    
+    @include tablet {
+      padding: $space-md;
+    }
+    
+    @include mobile {
+      padding: $space-sm;
+    }
+    
+    h2 {
+      color: $primary;
+      margin-bottom: $space-md;
+      
+      @include mobile {
+        font-size: $text-md;
+      }
+    }
+    
+    p {
+      margin-bottom: $space-sm;
+      line-height: 1.8;
+    }
+  }
+  
+  &__sidebar {
+    background: $white;
+    padding: $space-lg;
+    border-radius: $radius;
+    box-shadow: $shadow;
+    height: fit-content;
+    
+    @include tablet {
+      padding: $space-md;
+    }
+    
+    @include mobile {
+      padding: $space-sm;
+    }
+    
+    h3 {
+      color: $primary;
+      margin-bottom: $space-md;
+      
+      @include mobile {
+        font-size: $text-base;
+      }
+    }
+    
+    ul {
+      li {
+        padding: $space-sm 0;
+        border-bottom: 1px solid $light;
+        
+        &:before {
+          content: '✓';
+          color: $primary;
+          margin-right: $space-xs;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
+
+// FOOTER
+.footer {
+  background: $dark;
+  color: $white;
+  padding: $space-lg $space-md;
+  margin-top: $space-xl;
+  
+  @include tablet {
+    padding: $space-md $space-sm;
+  }
+  
+  @include mobile {
+    padding: $space-sm;
+  }
+  
+  &__grid {
+    @include grid(3, $space-lg);
+    max-width: 1200px;
+    margin: 0 auto;
+    
+    @include tablet {
+      @include grid(1, $space-md);
+      text-align: center;
+    }
+  }
+  
+  &__col {
+    h3 {
+      color: $primary;
+      margin-bottom: $space-sm;
+      
+      @include mobile {
+        font-size: $text-base;
+      }
+    }
+    
+    p, a {
+      color: $light;
+      font-size: $text-sm;
+      line-height: 1.8;
+      
+      &:hover {
+        color: $primary;
+      }
+    }
+  }
+  
+  &__bottom {
+    text-align: center;
+    margin-top: $space-lg;
+    padding-top: $space-md;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: $light;
+    font-size: $text-sm;
+    
+    @include mobile {
+      margin-top: $space-md;
+      padding-top: $space-sm;
+      font-size: 0.75rem;
+    }
+  }
+}

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - BigBurger</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="navbar__container">
+            <div class="navbar__logo">
+                <img src="img/logo.png" alt="BigBurger">
+                <h2>BIGBURGER</h2>
+            </div>
+            <ul class="navbar__menu">
+                <li><a href="index.html" class="navbar__link">Home</a></li>
+                <li><a href="menu.html" class="navbar__link">Menú</a></li>
+                <li><a href="especiales.html" class="navbar__link">Especiales</a></li>
+                <li><a href="nosotros.html" class="navbar__link">Nosotros</a></li>
+                <li><a href="contacto.html" class="navbar__link navbar__link--active">Contacto</a></li>
+            </ul>
+            <button class="navbar__cart">🛒 (1)</button>
+        </div>
+    </nav>
+
+    <!-- CONTENIDO -->
+    <div class="content">
+        <h1 style="text-align: center; color: #FF6B35; margin-bottom: 2rem;">Contáctanos</h1>
+        
+        <div class="content__grid">
+            <!-- FORMULARIO -->
+            <div class="form">
+                <h2>Envíanos un mensaje</h2>
+                <p style="margin-bottom: 1.5rem; color: #666;">¿Tienes alguna pregunta o comentario? Completa el formulario y te responderemos lo antes posible.</p>
+                
+                <form>
+                    <div class="form__group">
+                        <label for="nombre" class="form__label">Nombre Completo *</label>
+                        <input type="text" id="nombre" class="form__input" placeholder="Tu nombre" required>
+                    </div>
+                    
+                    <div class="form__group">
+                        <label for="email" class="form__label">Correo Electrónico *</label>
+                        <input type="email" id="email" class="form__input" placeholder="tu@email.com" required>
+                    </div>
+                    
+                    <div class="form__group">
+                        <label for="telefono" class="form__label">Teléfono</label>
+                        <input type="tel" id="telefono" class="form__input" placeholder="999 999 999">
+                    </div>
+                    
+                    <div class="form__group">
+                        <label for="asunto" class="form__label">Asunto *</label>
+                        <input type="text" id="asunto" class="form__input" placeholder="¿En qué podemos ayudarte?" required>
+                    </div>
+                    
+                    <div class="form__group">
+                        <label for="mensaje" class="form__label">Mensaje *</label>
+                        <textarea id="mensaje" class="form__textarea" placeholder="Escribe tu mensaje aquí..." required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn--primary" style="width: 100%;">Enviar Mensaje</button>
+                </form>
+            </div>
+            
+            <!-- INFORMACIÓN DE CONTACTO -->
+            <div class="content__sidebar">
+                <h3>Información de Contacto</h3>
+                <ul>
+                    <li style="margin-bottom: 1rem;">
+                        <strong>📍 Dirección:</strong><br>
+                        Av. Principal 123<br>
+                        Lima, Perú
+                    </li>
+                    <li style="margin-bottom: 1rem;">
+                        <strong>📞 Teléfono:</strong><br>
+                        (01) 234-5678<br>
+                        WhatsApp: 999 888 777
+                    </li>
+                    <li style="margin-bottom: 1rem;">
+                        <strong>✉️ Email:</strong><br>
+                        info@bigburger.com<br>
+                        pedidos@bigburger.com
+                    </li>
+                    <li>
+                        <strong>🕐 Horario:</strong><br>
+                        Lunes - Jueves: 11AM - 10PM<br>
+                        Viernes - Sábado: 11AM - 11PM<br>
+                        Domingo: 11AM - 10PM
+                    </li>
+                </ul>
+                
+                <h3 style="margin-top: 2rem;">Síguenos</h3>
+                <ul>
+                    <li>📘 Facebook: /BigBurgerPeru</li>
+                    <li>📸 Instagram: @bigburger_pe</li>
+                    <li>🐦 Twitter: @BigBurgerPE</li>
+                    <li>📱 TikTok: @bigburger.pe</li>
+                </ul>
+                
+                <h3 style="margin-top: 2rem;">Delivery</h3>
+                <p style="font-size: 0.875rem; color: #666; line-height: 1.8;">
+                    Realizamos delivery a toda la ciudad de Lima. Pedido mínimo: S/25. Tiempo de entrega: 30-45 minutos.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer__grid">
+            <div class="footer__col">
+                <h3>BigBurger</h3>
+                <p>Donde cada bocado es una gran experiencia</p>
+                <p>Las mejores hamburguesas artesanales desde 2024</p>
+            </div>
+            <div class="footer__col">
+                <h3>Enlaces</h3>
+                <p><a href="menu.html">Menú</a></p>
+                <p><a href="especiales.html">Especiales</a></p>
+                <p><a href="nosotros.html">Nosotros</a></p>
+                <p><a href="contacto.html">Contacto</a></p>
+            </div>
+            <div class="footer__col">
+                <h3>Contacto</h3>
+                <p>📍 Av. Principal 123, Lima</p>
+                <p>📞 (01) 234-5678</p>
+                <p>✉️ info@bigburger.com</p>
+                <p>🕐 Lun-Dom: 11AM - 11PM</p>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <p>&copy; 2024 BigBurger. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
